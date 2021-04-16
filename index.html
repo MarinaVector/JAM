@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Create Task</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    
+    <style>
+
+    </style>
+</head>
+
+<body>
+ <div id="app">
+    <div class="container">
+      <add-cup class="mb-4" @added="onNewCupAdded"></add-cup>
+      <make-jam class="mb-4" @added="onNewJamAdded"></make-jam>
+      <result :empty-cups="emptyCups" :jam-cups="jamCups"></result>
+    </div>
+  </div>
+<script src="app.js"></script>
+</body>
+</html>
