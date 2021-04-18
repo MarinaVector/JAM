@@ -4,14 +4,16 @@ Vue.component('add-cup', {
   }),
   template: `
     <div class="card">
+    
       <div class="card-body">
+      <h3>Add empty cups</h3>
         <div class="row">
-          <div class="col">
-            <label class="form-label">Code</label>
+                 <div class="col">
+            <label class="form-label">Cup number</label>
             <input class="form-control" type="text" v-model="form.cupNumber">
           </div>
           <div class="col">
-            <label class="form-label">Volume</label>
+            <label class="form-label">Empty cup volume (ml)</label>
             <input class="form-control" type="number" v-model="form.volume">
           </div>
         </div>
@@ -24,7 +26,7 @@ Vue.component('add-cup', {
   methods: {
     add() {
       this.$emit('added', this.form)
-      this.item = { cupNumber: 'M', volume: 500 }
+      this.form = { cupNumber: 'M', volume: 500 }
     },
   },
 })
@@ -37,6 +39,7 @@ Vue.component('make-jam', {
   template: `
     <div class="card">
       <div class="card-body">
+      <h3>Add ready-made jam (types of jam and volumes of pots)</h3>
         <div class="row">
           <div class="col">
             <label class="form-label">Jam type</label>
@@ -75,11 +78,11 @@ Vue.component('result', {
         <thead>
           <tr>
             <td>#</td>
-            <td>Volume (g)</td>
+            <td>Volume (ml)</td>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in $props.emptyCups" :key="item.cupNumber">
+               <tr v-for="item in $props.emptyCups" :key="item.cupNumber">
             <td>{{ item.cupNumber }}</td>
             <td>{{ item.volume }}</td>
           </tr>
@@ -92,8 +95,8 @@ Vue.component('result', {
           <tr>
             <td>#</td>
             <td>Jam type</td>
-            <td>Volume used (g)</td>
-            <td>Volume total (g)</td>
+            <td>Volume used (ml)</td>
+            <td>Volume total (ml)</td>
           </tr>
         </thead>
         <tbody>
@@ -115,9 +118,9 @@ const app = new Vue({
     emptyCups: [
       { cupNumber: 'M1', volume: 500 },
       { cupNumber: 'M2', volume: 300 },
-      { cupNumber: 'M3', volume: 750 },
-      { cupNumber: 'M4', volume: 800 },
-      { cupNumber: 'M5', volume: 1000 },
+      { cupNumber: 'M3', volume: 500 },
+      { cupNumber: 'M4', volume: 500 },
+      { cupNumber: 'M5', volume: 500 },
     ],
     jamCups: [],
   },
@@ -145,6 +148,3 @@ const app = new Vue({
     },
   },
 })
-
-
-
