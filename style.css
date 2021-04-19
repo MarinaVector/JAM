@@ -1,0 +1,18 @@
+body {
+    height: 100%;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0;
+}
+
+.title {
+    text-align: center;
+    font-size: 38px;
+    color: #0d1805;
+    text-transform: uppercase;
+}
+
+.main-header {
+    background: url('jam.png') center center/cover no-repeat;
+}

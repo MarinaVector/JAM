@@ -6,7 +6,7 @@ Vue.component('add-cup', {
     <div class="card">
     
       <div class="card-body">
-      <h3>Add empty cups</h3>
+      <h3>1. Add empty cups</h3>
         <div class="row">
                  <div class="col">
             <label class="form-label">Cup number</label>
@@ -33,13 +33,13 @@ Vue.component('add-cup', {
 
 Vue.component('make-jam', {
   data: () => ({
-    types: ['Клубничное', 'Вишневое', 'Абрикосовое'],
+    types: ['Strawberry', 'Cherry', 'Apricot'],
     form: { type: '', volume: 5000 },
   }),
   template: `
     <div class="card">
       <div class="card-body">
-      <h3>Add ready-made jam (types of jam and volumes of pots)</h3>
+      <h3>2. Add ready-made jam (types of jam and volumes of pots)</h3>
         <div class="row">
           <div class="col">
             <label class="form-label">Jam type</label>
@@ -73,7 +73,7 @@ Vue.component('result', {
   },
   template: `
     <div>
-      <h4>Empty Cups</h4>
+      <h4>Your current empty cups</h4>
       <table class="table table-bordered table-striped mb-4">
         <thead>
           <tr>
@@ -89,7 +89,7 @@ Vue.component('result', {
         </tbody>
       </table>
 
-      <h4>Jam Cups</h4>
+      <h4>You jam cups</h4>
       <table class="table table-bordered table-striped">
         <thead>
           <tr>
@@ -116,11 +116,7 @@ const app = new Vue({
   el: '#app',
   data: {
     emptyCups: [
-      { cupNumber: 'M1', volume: 500 },
-      { cupNumber: 'M2', volume: 300 },
-      { cupNumber: 'M3', volume: 500 },
-      { cupNumber: 'M4', volume: 500 },
-      { cupNumber: 'M5', volume: 500 },
+
     ],
     jamCups: [],
   },
